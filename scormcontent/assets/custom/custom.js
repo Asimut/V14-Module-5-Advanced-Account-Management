@@ -216,7 +216,7 @@ function checkLMSData(){
 
   // Getting values from LocalStorage
   for ( var i=0; i<localStorage.length; ++i ) {
-      var retrieved = localStorage.getItem( 'LearningJournal_' );		
+      var retrieved = localStorage.getItem( 'LearningJournal_'+GetTodayDate() );		
       UserData.Sections = JSON.parse(retrieved);	      	
   }
 
