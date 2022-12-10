@@ -402,13 +402,35 @@ window.CreateBookView = function(save) {
 		}		
 	}
 	
+	var options = {
+		pdfOpenParams: {
+			navpanes: 0,
+			page: page,
+			toolbar: 0,
+			statusbar: 0,
+			// pagemode: "thumbs",
+			view: "FitV"
+		},
+		forcePDFJS: true,
+		PDFJS_URL: "pdfjs/web/viewer.html"
+	};
+	
+	var blob = doc.output('blob'),
+		blob_url = URL.createObjectURL(blob);
+	
+	var myPDF = PDFObject.embed(blob_url, "#example1", options);
+	
+	var el = document.querySelector("#results");
+		el.setAttribute("class", (myPDF) ? "success" : "fail");
+		el.innerHTML = (myPDF) ? "PDFObject was successful!" : "Uh-oh, the embed didn't work.";
+
 	if(save){
 		console.log('save')
 		
 		// doc.save('a4.pdf')
 		doc.autoPrint();
 		//This is a key for printing
-		doc.output('dataurlnewwindow');
+		// doc.output('dataurlnewwindow');
 		// doc.output('datauristring');		
 		// doc.output('datauri');
 
@@ -416,30 +438,16 @@ window.CreateBookView = function(save) {
 
 		// doc.autoPrint();
 		// doc.output('bloburl');
+
+		var string = doc.output('datauristring');
+		var embed = "<embed width='100%' height='100%' src='" + string + "'/>"
+		var x = window.open();
+		x.document.open();
+		x.document.write(embed);
+		x.document.close();
 		
-	} else{
-		var options = {
-			pdfOpenParams: {
-				navpanes: 0,
-				page: page,
-				toolbar: 0,
-				statusbar: 0,
-				// pagemode: "thumbs",
-				view: "FitV"
-			},
-			forcePDFJS: true,
-			PDFJS_URL: "pdfjs/web/viewer.html"
-		};
-		
-		var blob = doc.output('blob'),
-			blob_url = URL.createObjectURL(blob);
-		
-		var myPDF = PDFObject.embed(blob_url, "#example1", options);
-		
-		var el = document.querySelector("#results");
-			el.setAttribute("class", (myPDF) ? "success" : "fail");
-			el.innerHTML = (myPDF) ? "PDFObject was successful!" : "Uh-oh, the embed didn't work.";
 	}
+	
 		
 
 

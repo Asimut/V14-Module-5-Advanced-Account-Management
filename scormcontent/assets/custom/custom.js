@@ -145,7 +145,7 @@ $(document).ready(function() {
     if($('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote')){    
       if(!$('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote').find('#print_journal').length){
         $('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote').append('<button id="print_journal">PRINT JOURNAL</button>');
-        $('body').append('<iframe id="print_iframe" src="assets/custom/pdfwebpage.html" frameborder="0" width="100%" height="0"></iframe>');
+        $('body').append('<iframe id="print_iframe" src="assets/custom/PDFBookView/pdfwebpage.html" frameborder="0" width="100%" height="0"></iframe>');
       }   
     } 
     
@@ -356,6 +356,7 @@ $(document).on('click', '#print_journal', function(e){
 
   var iFramePrint = document.getElementById('print_iframe'); 
       iFramePrint.contentWindow.CreateBookView(true);
+      // iFramePrint.contentWindow.CreateBookView(true);
 
 });
 
