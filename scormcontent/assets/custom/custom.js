@@ -133,15 +133,21 @@ $(document).ready(function() {
 
     $('#app .blocks-lesson select').trigger('change');
 
-    $("#app textarea").keyup(function() {
+    $("#app textarea").on('keyup change', function() {
       if (this.value.length > 600)
           this.value = this.value.substr(0, 600);
     });  
-    
-    if(!$('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote').find('#print_journal').length){
-      $('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote').append('<button id="print_journal">PRINT JOURNAL</button>');
-      $('body').append('<iframe id="print_iframe" src="assets/custom/pdfwebpage.html" frameborder="0" width="100%" height="0"></iframe>');
-    }    
+    // $("#app textarea").keyup(function() {
+    //   if (this.value.length > 600)
+    //       this.value = this.value.substr(0, 600);
+    // }); 
+
+    if($('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote')){    
+      if(!$('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote').find('#print_journal').length){
+        $('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote').append('<button id="print_journal">PRINT JOURNAL</button>');
+        $('body').append('<iframe id="print_iframe" src="assets/custom/pdfwebpage.html" frameborder="0" width="100%" height="0"></iframe>');
+      }   
+    } 
     
   });
   
@@ -1114,6 +1120,8 @@ function createEntryfromNote( note ) {
     }
     // set the prompt
     if ( a.innerText.substring(0,promptlabel.length) == promptlabel ) {
+      // console.log(a.outerHTML)
+      // console.log(a.innerText.replace(promptlabel, "").replace('[part2]', "").replace('[part3]', ""))
       prompt = a.innerText.replace(promptlabel, "").trim();
     }
     // set the options for Select

@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no" ?>
-<manifest identifier="pPRuCJ3ycKYeOxQZvL5PQKhVDNpwveMHDB8r3je5" version="1.3"
+<manifest identifier="pPRuCJ3ycKYeOxQZvL5PQKhVDNpwveMHF5ikFTev" version="1.3"
   xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
@@ -21,7 +21,7 @@
       <title>Module 5: Advanced Account Management</title>
       <item identifier="i1" identifierref="r1" isvisible="true">
         <title>Module 5: Advanced Account Management</title>
-        <adlcp:dataFromLMS>eyJjcHYiOiJEQjhyM2plNSIsInJsZCI6ZmFsc2V9</adlcp:dataFromLMS>
+        <adlcp:dataFromLMS>eyJjcHYiOiJGNWlrRlRldiIsInJsZCI6ZmFsc2V9</adlcp:dataFromLMS>
         <imsss:sequencing>
           <imsss:deliveryControls tracked="true" completionSetByContent="true" objectiveSetByContent="true"/>
         </imsss:sequencing>
@@ -74,48 +74,48 @@
 <file href="scormcontent/lib/fonts/Lato-Regular.woff" />
 <file href="scormcontent/lib/fonts/Lato-Light.woff" />
 <file href="scormcontent/lib/fonts/nf6Fj-8v-zFBhdk4-Cronos-Pro-Light.woff" />
-<file href="scormcontent/assets/akXvD2SQYywVQmAR_small.png" />
-<file href="scormcontent/assets/0PrjZUxi3b4dXbwc_small_1579124541.png" />
-<file href="scormcontent/assets/F0Xl3gzjK8_JMOCd_LE4shvEaiZAnBnY7.png" />
-<file href="scormcontent/assets/S-Ls68odMrFlFbuv_iN4pgr5UjBXfejtZ.png" />
-<file href="scormcontent/assets/pQOHYtZP0nA5TAZo_0E3aqgTZiSPl5W0B.png" />
-<file href="scormcontent/assets/qsoqsKSuIGisp3ee_ERZuV5tgYXUiNUiB.png" />
-<file href="scormcontent/assets/6A4bA9zTd8EtFn2s_XE60JW16ZB5XpxE4.png" />
-<file href="scormcontent/assets/TBRkypslcI80T1Ui_qwhyNRqxNYDeToZO.png" />
-<file href="scormcontent/assets/Sqmd08FQFhPI3EB4_WZ6wgWFGjThLxOj3.png" />
-<file href="scormcontent/assets/OIHA-JWVTadNrOHU_transcoded-qeUsgJD-s_NW26fZ-07_Networking.mp3" />
-<file href="scormcontent/assets/Bw1o41r_hFqS0gjF_1PTDqWaCIvIMYXmn.png" />
-<file href="scormcontent/assets/z4icaqCYwlehl_FB_AGaAVolXlo4FrIAd.png" />
-<file href="scormcontent/assets/Xi4upeFuzS8NisWs_A40WEepI6BctPizs.png" />
-<file href="scormcontent/assets/G1eswTV3kqhh4COi_transcoded-FpfaeoKI_2IlApdp-08_Preparation.mp3" />
-<file href="scormcontent/assets/MqBEZhhwwRNy-YiT_QdJPbZXDM0owJUXZ.png" />
-<file href="scormcontent/assets/9UWw9R5PGuTvzmGP_O3CU4aYwLRxk_i0c.png" />
-<file href="scormcontent/assets/oZpZWLOharv3HOOc_WNZ3f5ac0bkQ1nkm.png" />
-<file href="scormcontent/assets/l9xuhGsKhN174FQQ_transcoded-KjGlL-hkilrpdJAT-09_a_Building%20Trust.mp3" />
-<file href="scormcontent/assets/C1wHZFceGRg-dNn2_llPLQB5N05_91P1U.png" />
-<file href="scormcontent/assets/lSxbhgHU_eJcQO2D_RcoxZMavuBeCSbnD.png" />
-<file href="scormcontent/assets/qUTPo9y-9lqyUb7z_2CJbNS6IhM4ANdLV.png" />
-<file href="scormcontent/assets/Soy1f06e7At75BEM_transcoded-7cNWetH-KL20rYcK-11-Navigating%20the%20Account.mp3" />
-<file href="scormcontent/assets/ZjrBHqV3CHhixalD_rwkU4nTEkve_T7f7.png" />
-<file href="scormcontent/assets/cZvzA78B-EK24_KT_fJJbNBGIUkKNLUtg.png" />
-<file href="scormcontent/assets/2k4lz6F-merXdsJ5_r1QeZO_syHXDDSRR.png" />
-<file href="scormcontent/assets/2koICahUEUP0K_Jo_transcoded-wcvpH9gjPOnkR1sM-12a-InspiringAction_54sec.mp3" />
-<file href="scormcontent/assets/mhn0O7w-B7rTiINM_YwiDAi7R2UElvRO9.png" />
-<file href="scormcontent/assets/fcCq5g5IEJYGayDO_Ie0F7Dc1n3r8ULNG.png" />
-<file href="scormcontent/assets/uwuuVdTMC_QZTx7o_3JfQzCb0PZbxK99g.png" />
-<file href="scormcontent/assets/7yF4_Fffdj5dXQIG_transcoded-4-rxQa7PZ99RTNKT-15-Building%20Consensus%208.mp3" />
-<file href="scormcontent/assets/V2JVlINjPITLmbaF_1o4sTojARQ4otryD.png" />
-<file href="scormcontent/assets/XhKiN-c7olLRlZ05_on5NvYTBRoKZ6ufk.png" />
-<file href="scormcontent/assets/BXt8xFX__j4sdago_IeTwahl9kgKOPTRF.png" />
-<file href="scormcontent/assets/yxyIegNffUDgRc_S_transcoded-nghgiCjA_axkHX70-16-Agility.mp3" />
-<file href="scormcontent/assets/mFunwb1wXTXWL9RK_bjwiIFpuY_nTvs8o.png" />
-<file href="scormcontent/assets/Sy_bE1ZPwfA_uJDr_zfILI3Kfhu7a8g2w.png" />
-<file href="scormcontent/assets/XVv81A5zjDV-BSOC_ss3pNDudyEi-AaaU.png" />
-<file href="scormcontent/assets/PwNkf0M3MUNoGU6b_transcoded-IlQpLgsbRb_6ZV-n-17-Accountability.mp3" />
-<file href="scormcontent/assets/kHjy366pE2na-ml-_c-udAOWAq0OZMqtU.png" />
-<file href="scormcontent/assets/qPZk3icKQZCVa7Eu_4M-ySKxREOsqQfOl.jpg" />
-<file href="scormcontent/assets/hhj8Sj0IyqeRKo5H_12_medical.jpg" />
-<file href="scormcontent/assets/Kfiz27yeo1HWnwAi_example-header-image.jpg" />
+<file href="scormcontent/assets/n7xHH1O6F6AqyKAt_small.png" />
+<file href="scormcontent/assets/igQXtnKPxAhVVC_0_small_1579124541.png" />
+<file href="scormcontent/assets/K2UgJHUSIiI2SaZQ_LE4shvEaiZAnBnY7.png" />
+<file href="scormcontent/assets/mAebBuIBS8pGpUMX_iN4pgr5UjBXfejtZ.png" />
+<file href="scormcontent/assets/D1NAP9G7njyALzwW_0E3aqgTZiSPl5W0B.png" />
+<file href="scormcontent/assets/mrpYVTgcI-KRpETj_ERZuV5tgYXUiNUiB.png" />
+<file href="scormcontent/assets/rsaWxJAyj10hKvsB_XE60JW16ZB5XpxE4.png" />
+<file href="scormcontent/assets/IPesUGG2KlqlSuXi_qwhyNRqxNYDeToZO.png" />
+<file href="scormcontent/assets/szBG9-vejWvI0W5W_WZ6wgWFGjThLxOj3.png" />
+<file href="scormcontent/assets/bIiwd9RCpx1SufCf_transcoded-qeUsgJD-s_NW26fZ-07_Networking.mp3" />
+<file href="scormcontent/assets/mPJdntKdKqWFD6sy_1PTDqWaCIvIMYXmn.png" />
+<file href="scormcontent/assets/D9D2YqotCS3aRehU_AGaAVolXlo4FrIAd.png" />
+<file href="scormcontent/assets/TgVyHbfjbM9b0JfO_A40WEepI6BctPizs.png" />
+<file href="scormcontent/assets/KFB7yFIS1RbS2Q9b_transcoded-FpfaeoKI_2IlApdp-08_Preparation.mp3" />
+<file href="scormcontent/assets/t_vb-T_Uc3BvsSwZ_QdJPbZXDM0owJUXZ.png" />
+<file href="scormcontent/assets/P4xzgaQGGZxD4Um8_O3CU4aYwLRxk_i0c.png" />
+<file href="scormcontent/assets/h9U1Sbn-ji-Y3a2h_WNZ3f5ac0bkQ1nkm.png" />
+<file href="scormcontent/assets/uTO1jULeaO1d4JzY_transcoded-KjGlL-hkilrpdJAT-09_a_Building%20Trust.mp3" />
+<file href="scormcontent/assets/gwdgw1lmq-uxh45p_llPLQB5N05_91P1U.png" />
+<file href="scormcontent/assets/6g_TrZfZIePgkgj5_RcoxZMavuBeCSbnD.png" />
+<file href="scormcontent/assets/Jh7HiwGgRNCdpfVu_2CJbNS6IhM4ANdLV.png" />
+<file href="scormcontent/assets/lK8h-fj3L5hzR5oh_transcoded-7cNWetH-KL20rYcK-11-Navigating%20the%20Account.mp3" />
+<file href="scormcontent/assets/GjYXivf3pFrACK3n_rwkU4nTEkve_T7f7.png" />
+<file href="scormcontent/assets/LBUkPQTQh8zCEWJ4_fJJbNBGIUkKNLUtg.png" />
+<file href="scormcontent/assets/TsQxskQw96QAVoMo_r1QeZO_syHXDDSRR.png" />
+<file href="scormcontent/assets/o7tqfEiMMhoIzfSB_transcoded-wcvpH9gjPOnkR1sM-12a-InspiringAction_54sec.mp3" />
+<file href="scormcontent/assets/boyp5bY4ArEPXihE_YwiDAi7R2UElvRO9.png" />
+<file href="scormcontent/assets/r7rB6J4IIjtwwOI8_Ie0F7Dc1n3r8ULNG.png" />
+<file href="scormcontent/assets/ZCcZpPDlK14XZvw6_3JfQzCb0PZbxK99g.png" />
+<file href="scormcontent/assets/uL72k3B3LpDI5xSb_transcoded-4-rxQa7PZ99RTNKT-15-Building%20Consensus%208.mp3" />
+<file href="scormcontent/assets/N5ic-zR9czj81rF8_1o4sTojARQ4otryD.png" />
+<file href="scormcontent/assets/4zVwQJ7JnEr5bMMT_on5NvYTBRoKZ6ufk.png" />
+<file href="scormcontent/assets/JvFKigNpfIfYKRAm_IeTwahl9kgKOPTRF.png" />
+<file href="scormcontent/assets/3EGim5UIxJJNUoT0_transcoded-nghgiCjA_axkHX70-16-Agility.mp3" />
+<file href="scormcontent/assets/EXJzkvXcEIQRERxl_bjwiIFpuY_nTvs8o.png" />
+<file href="scormcontent/assets/RwLaapJuGNWrn2Du_zfILI3Kfhu7a8g2w.png" />
+<file href="scormcontent/assets/sqmUwpNSbYp5FgUH_ss3pNDudyEi-AaaU.png" />
+<file href="scormcontent/assets/rJZSAVZoQZmUGppU_transcoded-IlQpLgsbRb_6ZV-n-17-Accountability.mp3" />
+<file href="scormcontent/assets/KXoy5xE7kgZs-3qw_c-udAOWAq0OZMqtU.png" />
+<file href="scormcontent/assets/4K1z5SvrVgFDcNRz_4M-ySKxREOsqQfOl.jpg" />
+<file href="scormcontent/assets/UeX0cTXBJs3MyvKx_12_medical.jpg" />
+<file href="scormcontent/assets/waLZu-TxNNS0dOmH_example-header-image.jpg" />
 
     </resource>
   </resources>
