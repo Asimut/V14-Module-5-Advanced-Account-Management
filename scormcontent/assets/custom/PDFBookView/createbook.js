@@ -440,11 +440,27 @@ window.CreateBookView = function(save) {
 
 		var string = doc.output('datauristring');
 		var embed = "<embed width='100%' height='100%' src='" + string + "'/>";
-		var x = window;
-		// var x = window.open();
-		x.document.open();
-		x.document.write(embed);
-		x.document.close();
+		
+
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
+			.test(navigator.userAgent)) {
+
+			alert("You use mobile device.")
+
+			var x = window.open();
+			x.document.open();
+			x.document.write(embed);
+			x.document.close();
+
+		} else {
+			alert("You use PC.")
+
+			var x = window;
+			// var x = window.open();
+			x.document.open();
+			x.document.write(embed);
+			x.document.close();
+		}
 		
 	} else {
 		var blob = doc.output('blob'),
