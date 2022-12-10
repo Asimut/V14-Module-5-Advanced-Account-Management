@@ -360,7 +360,7 @@ window.CreateBookView = function(save) {
 			var P14_Response_4 = currentSection.entries[3].response;
 			if(P14_Response_4 != null){
 				P14_Response_4 = doc.splitTextToSize(P14_Response_4, 255);
-				doc.text(315, 379, P14_Response_4);
+				doc.text(315, 374, P14_Response_4);
 			}
 
 			var P14_Response_5 = currentSection.entries[4].response;
@@ -378,7 +378,7 @@ window.CreateBookView = function(save) {
 			var P14_Response_7 = currentSection.entries[6].response;
 			if(P14_Response_7 != null){
 				P14_Response_7 = doc.splitTextToSize(P14_Response_7, 255);
-				doc.text(315, 470, P14_Response_7);
+				doc.text(315, 465, P14_Response_7);
 			}
 
 			var P14_Response_8 = currentSection.entries[7].response;
@@ -403,7 +403,7 @@ window.CreateBookView = function(save) {
 	}
 
 	doc.setProperties({
-		title: "journalpdf",
+		title: "Module5_AAM_Journal",
 		// subject: "This is the subject",
 		// author: "Author Name",
 		// keywords: "generated, javascript, web 2.0, ajax",
@@ -445,18 +445,19 @@ window.CreateBookView = function(save) {
 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
 			.test(navigator.userAgent)) {
 
-			alert("You use mobile device.")
+			// alert("You use mobile device.")
 
-			var x = window.open();
-			x.document.open();
-			x.document.write(embed);
-			x.document.close();
+			doc.save('Module5_AAM_Journal.pdf');
+
+			// var x = window.open();
+			// x.document.open();
+			// x.document.write(embed);
+			// x.document.close();
 
 		} else {
-			alert("You use PC.")
+			// alert("You use PC.")
 
 			var x = window;
-			// var x = window.open();
 			x.document.open();
 			x.document.write(embed);
 			x.document.close();

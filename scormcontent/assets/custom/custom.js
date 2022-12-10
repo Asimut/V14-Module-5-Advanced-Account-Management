@@ -134,13 +134,23 @@ $(document).ready(function() {
     $('#app .blocks-lesson select').trigger('change');
 
     $("#app textarea").on('keyup change', function() {
-      if (this.value.length > 600)
-          this.value = this.value.substr(0, 600);
+      var promptText = $(this).prev().text();
+      if(promptText == "What skills and strategies have you used to successfully navigate complex accounts?"){
+        if (this.value.length > 1300)
+        this.value = this.value.substr(0, 1300);
+      } else if(promptText == "People who can help"||promptText == "People who can help [part2]"||promptText == "People who can help [part3]"){
+        if (this.value.length > 230)
+        this.value = this.value.substr(0, 230);
+      }else if(promptText == "Actions I can take"||promptText == "Actions I can take [part2]"||promptText == "Actions I can take [part3]"){
+        if (this.value.length > 500)
+        this.value = this.value.substr(0, 500);
+      }else {
+        if (this.value.length > 700)
+          this.value = this.value.substr(0, 700);
+      }
+      
     });  
-    // $("#app textarea").keyup(function() {
-    //   if (this.value.length > 600)
-    //       this.value = this.value.substr(0, 600);
-    // }); 
+    
 
     if($('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote')){    
       if(!$('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote').find('#print_journal').length){
@@ -356,8 +366,6 @@ $(document).on('click', '#print_journal', function(e){
 
   var iFramePrint = document.getElementById('print_iframe'); 
       iFramePrint.contentWindow.CreateBookView(true);
-      // iFramePrint.contentWindow.CreateBookView(true);
-
 });
 
 
