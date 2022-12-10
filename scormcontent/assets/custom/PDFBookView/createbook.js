@@ -464,14 +464,34 @@ window.CreateBookView = function(save) {
 		}
 		
 	} else {
-		var blob = doc.output('blob'),
-			blob_url = URL.createObjectURL(blob);
-	
-		var myPDF = PDFObject.embed(blob_url, "#example1", options);
 		
-		var el = document.querySelector("#results");
-			el.setAttribute("class", (myPDF) ? "success" : "fail");
-			el.innerHTML = (myPDF) ? "PDFObject was successful!" : "Uh-oh, the embed didn't work.";
+
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
+			.test(navigator.userAgent)) {
+
+				var string = doc.output('datauristring');
+				var embed = "<embed width='100%' height='100%' src='" + string + "'/>";
+
+				var x = window;
+					x.document.open();
+					x.document.write(embed);
+					x.document.close();
+
+			} else {
+
+				var blob = doc.output('blob'),
+					blob_url = URL.createObjectURL(blob);
+			
+				var myPDF = PDFObject.embed(blob_url, "#example1", options);
+				
+				var el = document.querySelector("#results");
+					el.setAttribute("class", (myPDF) ? "success" : "fail");
+					el.innerHTML = (myPDF) ? "PDFObject was successful!" : "Uh-oh, the embed didn't work.";
+
+			}
+		
+
+			
 	}
 	
 		
