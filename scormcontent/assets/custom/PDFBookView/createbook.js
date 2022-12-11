@@ -360,7 +360,7 @@ window.CreateBookView = function(save) {
 			var P14_Response_4 = currentSection.entries[3].response;
 			if(P14_Response_4 != null){
 				P14_Response_4 = doc.splitTextToSize(P14_Response_4, 255);
-				doc.text(315, 374, P14_Response_4);
+				doc.text(315, 379, P14_Response_4);
 			}
 
 			var P14_Response_5 = currentSection.entries[4].response;
@@ -378,7 +378,7 @@ window.CreateBookView = function(save) {
 			var P14_Response_7 = currentSection.entries[6].response;
 			if(P14_Response_7 != null){
 				P14_Response_7 = doc.splitTextToSize(P14_Response_7, 255);
-				doc.text(315, 465, P14_Response_7);
+				doc.text(315, 470, P14_Response_7);
 			}
 
 			var P14_Response_8 = currentSection.entries[7].response;
@@ -478,6 +478,7 @@ window.CreateBookView = function(save) {
 		// 			x.document.close();
 
 		// 	} else {
+
 
 				var blob = doc.output('blob'),
 					blob_url = URL.createObjectURL(blob);

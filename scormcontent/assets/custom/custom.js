@@ -94,7 +94,7 @@ var localStorageItem = '';
 
 // These are the settings used by the autosave of journal entries
 var typingTimer;                //  timer identifier
-var doneTypingInterval = 400;  //  time in ms
+var doneTypingInterval = 300;  //  time in ms
 
 // Test if browser is firefox (used in printEntries)
 var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
@@ -149,15 +149,30 @@ $(document).ready(function() {
           this.value = this.value.substr(0, 700);
       }
       
-    });  
-    
+    });     
 
-    if($('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote')){    
-      if(!$('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote').find('#print_journal').length){
+    if($(this).find('[data-block-id="cl9zr7u9x0007356pk20s0qez"]').length){    
+      if($('#app #print_journal').length<1){
         $('#app [data-block-id="cl9zr7u9x0007356pk20s0qez"] .block-impact__quote').append('<button id="print_journal">PRINT JOURNAL</button>');
         $('body').append('<iframe id="print_iframe" src="assets/custom/PDFBookView/pdfwebpage.html" frameborder="0" width="100%" height="0"></iframe>');
       }   
-    } 
+    }   
+    
+    var pageTitle = $(this).find('.nav-sidebar__outline-section-item__link.active').text();
+    if(pageTitle == "Rank your proficiency" || pageTitle == "Re-rank your proficiency") {
+      pageNum = 2;
+    }else if(pageTitle == "Networking" || pageTitle == "Preparation" || pageTitle == "Building trust") {
+      pageNum = 3;
+    }else if(pageTitle == "Navigating the account" || pageTitle == "Inspiring action" || pageTitle == "Building consensus") {
+      pageNum = 4;
+    }else if(pageTitle == "Agility" || pageTitle == "Accountability") {
+      pageNum = 5;
+    }else if(pageTitle == "Competencies to further develop") {
+      pageNum = 6;
+    } else {
+      pageNum = 1;
+    }
+    $('body #book_iframe').attr('src', "assets/custom/PDFBookView/index.html?page=" + pageNum);  
     
   });
   
@@ -199,20 +214,22 @@ window.addEventListener("hashchange", function(){
   // Add to book link number of PDF Page
   var pageTitleFull = windowObj.document.title,
       pageTitle = pageTitleFull.split(' - ')[0];
-  if(pageTitle == "Rank your proficiency" || pageTitle == "Re-rank your proficiency") {
-    pageNum = 2;
-  }else if(pageTitle == "Networking" || pageTitle == "Preparation" || pageTitle == "Building trust") {
-    pageNum = 3;
-  }else if(pageTitle == "Navigating the account" || pageTitle == "Inspiring action" || pageTitle == "Building consensus") {
-    pageNum = 4;
-  }else if(pageTitle == "Agility" || pageTitle == "Accountability") {
-    pageNum = 5;
-  }else if(pageTitle == "Competencies to further develop") {
-    pageNum = 6;
-  } else {
-    pageNum = 1;
-  }
-  $('body #book_iframe').attr('src', "assets/custom/PDFBookView/index.html?page=" + pageNum);  
+      
+
+  // if(pageTitle == "Rank your proficiency" || pageTitle == "Re-rank your proficiency") {
+  //   pageNum = 2;
+  // }else if(pageTitle == "Networking" || pageTitle == "Preparation" || pageTitle == "Building trust") {
+  //   pageNum = 3;
+  // }else if(pageTitle == "Navigating the account" || pageTitle == "Inspiring action" || pageTitle == "Building consensus") {
+  //   pageNum = 4;
+  // }else if(pageTitle == "Agility" || pageTitle == "Accountability") {
+  //   pageNum = 5;
+  // }else if(pageTitle == "Competencies to further develop") {
+  //   pageNum = 6;
+  // } else {
+  //   pageNum = 1;
+  // }
+  // $('body #book_iframe').attr('src', "assets/custom/PDFBookView/index.html?page=" + pageNum);  
 
   checkLMSData();  
 
@@ -280,7 +297,7 @@ function checkLMSData(){
       startCountId = 9;
       startFor(startCountId);        
     } else if(currentSection.title == "Building consensus" ){
-      startCountId = 1; 
+      startCountId = 11; 
       startFor(startCountId);       
     } else if(currentSection.title == "Agility" ){
       startCountId = 13;  
@@ -315,21 +332,25 @@ function checkLMSData(){
   * @return none
 */
 function setLMSData(objid, response, prompt){   
+
   var date = new Date();
-  var dtmTime = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString().slice(0,-5);
+  var dtmTime = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString().slice(0,-5); 
   var id = prompt.replace(/ /g,'_').replace(/\W/g, '').substring(0, 254);
   var strDescription = String(prompt);
   var blnCorrect = "neutral";
   var correctresponse = null;
   var weighting = null;
   // var latency = (new Date().getTime() - window.interactionStart);
-  var latency = '0000:00:00.00';
+  var latency = '0000:00:00.00'; //0000:00:02.28
   var strResponse = String(response);
+  // 2022-12-10T19:46:42.871Z
+  // 2022-12-10T22:06:13.0+02
 
   // call the SCORM function in Rise  
   // windowObj.SCORM2004_RecordFillInInteraction(id, strResponse, blnCorrect, correctresponse, strDescription, weighting, latency, objid, dtmTime);
  
   // console.log("Sending to LMS:"+objid+'; '+strResponse+'; '+strDescription)
+
 
   if(courseVersionForLMS){
     // console.log(windowObj);
@@ -340,7 +361,7 @@ function setLMSData(objid, response, prompt){
     windowObj.SCORM2004_CallSetValue('cmi.interactions.'+objid+'.timestamp', dtmTime);
     windowObj.SCORM2004_CallSetValue('cmi.interactions.'+objid+'.learner_response', strResponse);
     windowObj.SCORM2004_CallSetValue('cmi.interactions.'+objid+'.result', blnCorrect);
-    windowObj.SCORM2004_CallSetValue('cmi.interactions.'+objid+'.latency', latency);
+    // windowObj.SCORM2004_CallSetValue('cmi.interactions.'+objid+'.latency', latency);
     windowObj.SCORM2004_CallSetValue('cmi.interactions.'+objid+'.description', strDescription);   
   } 
 } 
@@ -434,7 +455,7 @@ $(document).on('change', '.journalentry-select-two select', function(){
     }     
     
   })
-  console.log(seletArr);
+  // console.log(seletArr);
 
   $('.journalentry-select-two select option').each(function(){
 
@@ -1099,7 +1120,7 @@ function renderRadiotoDOM( parentcontainer, entry, sectionid, entryid ) {
       
     })
 
-    console.log(checkedListArr)
+    // console.log(checkedListArr)
   }
 
   $( ".block-impact--note:has( .journalentry-container)").addClass("block-impact--note-journalentry");
@@ -1300,11 +1321,11 @@ $(document).on('keyup change', '.journalentry-response', function(){
       var sectionid = myentrycontainer.data('sectionid');
       var entryid = myentrycontainer.data('entryid');
 
-      console.log(entryid + " "+response);
+      // console.log(entryid + " "+response);
 
       UserData.Sections[sectionid].entries[entryid].response = response;
 
-      console.log(UserData.Sections);    
+      // console.log(UserData.Sections);    
 
       setSectionstoLocalStorage();  
       
@@ -1319,7 +1340,7 @@ $(document).on('click', '[data-block-id="clb4v8ta7000y356w5ubscbb8"] .blocks-but
 
   $('#app .journalentry-select').each(function(){
     var $this = $(this);
-    console.log($this);
+    // console.log($this);
 
     $this.find('option[disabled]').prop('disabled', false);
 
@@ -1333,7 +1354,7 @@ $(document).on('click', '[data-block-id="clb4v8ta7000y356w5ubscbb8"] .blocks-but
 
       UserData.Sections[sectionid].entries[entryid].response = response;
 
-      console.log(UserData.Sections);    
+      // console.log(UserData.Sections);    
 
       setSectionstoLocalStorage();
   })
@@ -1393,22 +1414,22 @@ function checkContinueButton(){
     var getBlockQty = page.find('.journalentry-response').length,
     valid = true;
 
-    console.log('getBlockQty '+getBlockQty)
+    // console.log('getBlockQty '+getBlockQty)
 
     if(getBlockQty>0){
       let conrinueBtn = page.find('.continue-btn');
-      console.log(conrinueBtn);
+      // console.log(conrinueBtn);
 
       page.find('.page__content').addClass('page-locked');
 
         page.find('.journalentry-response').each(function(){
         var currentVal = $(this).val();
-        console.log(currentVal);
+        // console.log(currentVal);
 
         if(currentVal==="" || currentVal==null) {
           valid = false;
         }
-        console.log(valid);
+        // console.log(valid);
       })
 
       if(valid){
@@ -1416,11 +1437,9 @@ function checkContinueButton(){
       } else {
         page.find('.page__content').addClass('page-locked');
       }
+
+      setSectionstoLocalStorage();  
     }
-
-
-
-
   })
  
 }
@@ -1593,6 +1612,30 @@ function getTimestamp() {
     var sec = today.getSeconds();
     if(sec<10) { sec='0'+sec }
     return today.getFullYear() + mm + dd + hh+ min + sec ;
+}
+if (!Date.prototype.toISOString) {
+  (function() {
+
+    function pad(number) {
+      var r = String(number);
+      if (r.length === 1) {
+        r = '0' + r;
+      }
+      return r;
+    }
+
+    Date.prototype.toISOString = function() {
+      return this.getUTCFullYear() +
+        '-' + pad(this.getUTCMonth() + 1) +
+        '-' + pad(this.getUTCDate()) +
+        'T' + pad(this.getUTCHours()) +
+        ':' + pad(this.getUTCMinutes()) +
+        ':' + pad(this.getUTCSeconds()) + 
+        '.' + String((this.getUTCMilliseconds() / 1000).toFixed(3)).slice(2, 5) +
+        'Z';
+    };
+
+  }());
 }
 
 // Polyfill for isNaN

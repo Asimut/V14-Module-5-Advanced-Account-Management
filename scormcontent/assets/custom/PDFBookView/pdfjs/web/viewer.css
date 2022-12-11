@@ -2393,3 +2393,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
     display: none;
   }
 }
+@media all and (max-width: 768px){
+  #secondaryPrint{
+    display: none!important;
+  }
+}
